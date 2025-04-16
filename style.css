@@ -16,3 +16,35 @@ body {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 
 }
+
+.input-section {
+    display: grid;
+    gap: 10px;
+}
+
+#task-input {
+    padding: 5px;
+    border-color: black;
+    border-radius: 10px;;
+    border-width: 2px;
+    color:  black;
+    font-size: large;
+}
+
+#add-task{
+    padding: 10px;
+    background-color: blue;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    font-weight: bolder;
+    font-size: large;
+}
+
+.filter{
+    margin: 20px 0;
+    padding: 10px 10px;
+    cursor:pointer;
+    display:flex;
+    justify-content: space-between;
+}
