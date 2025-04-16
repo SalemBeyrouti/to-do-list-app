@@ -25,6 +25,24 @@ addTaskBtn.addEventListener("click", function()
     }
 });
 
+taskList.addEventListener("click", function (event){
+
+    const li = event.target.closest("li");
+    const index = li?.dataset.index;
+
+    if(index === undefined) return;
+
+    if (event.target.classList.contains("complete-button")){
+        tasks[index].completed = !tasks[index].completed;
+    } else if (event.target.classList.contains("delet-button")) {
+        tasks.splice(index, 1);
+
+    }
+
+    showTasks();
+
+})
+
 function showTasks(){
     taskList.innerHTML="";
 
@@ -40,7 +58,7 @@ function showTasks(){
         const taskText = document.createElement("span");
         taskText.textContent = task.text;
 
-        const buttonsDiv = document.createElement("button");
+        const buttonsDiv = document.createElement("div");
         buttonsDiv.className = "task-buttons";
 
         const completeBtn = document.createElement("button");
