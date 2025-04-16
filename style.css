@@ -1,6 +1,6 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: bisque;
+    background: rgb(70, 58, 144);
     justify-content: center;
     padding:40px;
     display:flex;
@@ -8,15 +8,29 @@ body {
 }
 
 .container {
-    background: white;
-    padding: 20px;
-    border-radius: 20px;
-    width:50%;
+    background: linear-gradient(135deg, #4c1c76, #9cabe0);
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+    width:100%;
     max-width: 500px;
+    margin: 100px auto 20px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 
 }
+.container h1{
+    color: black;
+    justify-content: center;
+    text-align: center;
+    font-weight: 900;
+    display: flex;
+    margin-bottom: 20px;
+}
 
+.container h1 img{
+    width:50px;
+    margin-left:20px;
+
+}
 .input-section {
     display: grid;
     gap: 10px;
@@ -55,3 +69,26 @@ body {
     color:white;
     background-color: blue;
 }
+
+ul{
+    list-style:;
+    padding: 10;
+}
+
+li {
+    display: flexbox;
+    justify-content: space-between;
+    padding: 8px;
+    border-bottom: 1px solid darkgray;
+}
+
+.completed span {
+    text-decoration: line-through;
+    color: gray;
+  }
+  
+  .task-buttons {
+    display: flex;
+    gap: 8px;
+    margin-left: auto;
+  }

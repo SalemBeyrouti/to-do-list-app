@@ -18,7 +18,7 @@ addTaskBtn.addEventListener("click", function()
 {
     const taskText = taskInput.value.trim();
     if (taskText !==""){
-        tasks.push({ text: taskText});
+        tasks.push({ text: taskText, completed: false});
         taskInput.value ="";
         showTasks();
 
@@ -31,7 +31,16 @@ function showTasks(){
     tasks.forEach((task, index) =>
         {
         const li = document.createElement('li')
-        li.textContent = task.text;
+        li.setAttribute("data-index", index);
+
+        if(task.completed){
+            li.classList.add("completed")
+        }
+
+        const taskText = document.createElement("span");
+        taskText.textContent = task.text;
+        
+        li.appendChild(taskText);
         taskList.appendChild(li);
 });
 }
