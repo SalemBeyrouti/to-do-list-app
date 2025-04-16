@@ -34,7 +34,7 @@ taskList.addEventListener("click", function (event){
 
     if (event.target.classList.contains("complete-button")){
         tasks[index].completed = !tasks[index].completed;
-    } else if (event.target.classList.contains("delet-button")) {
+    } else if (event.target.classList.contains("delete-button")) {
         tasks.splice(index, 1);
 
     }
@@ -42,6 +42,23 @@ taskList.addEventListener("click", function (event){
     showTasks();
 
 })
+
+filterBtns.forEach(function(btn) {
+    btn.addEventListener("click", function(){
+        filterBtns.forEach(function(b){
+            b.classList.remove("active");
+        });
+
+        btn.classList.add("active");
+
+        currentFilter = btn.textContent;
+
+        showTasks();
+    })
+    
+});
+
+
 
 function showTasks(){
     taskList.innerHTML="";
