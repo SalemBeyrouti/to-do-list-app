@@ -39,8 +39,23 @@ function showTasks(){
 
         const taskText = document.createElement("span");
         taskText.textContent = task.text;
-        
+
+        const buttonsDiv = document.createElement("button");
+        buttonsDiv.className = "task-buttons";
+
+        const completeBtn = document.createElement("button");
+        completeBtn.textContent = "✅"
+        completeBtn.className = "complete-button";
+
+        const deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "🗑️"
+        deleteBtn.className = "delete-button"
+
+        buttonsDiv.appendChild(completeBtn);
+        buttonsDiv.appendChild(deleteBtn);
+
         li.appendChild(taskText);
+        li.appendChild(buttonsDiv);
         taskList.appendChild(li);
 });
 }
