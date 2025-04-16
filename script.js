@@ -1,18 +1,19 @@
 const taskInput = document.getElementById("task-input");
-console.log(taskInput)
+// console.log(taskInput)
 
 const addTaskBtn = document.getElementById("add-task");
-console.log(addTaskBtn)
+// console.log(addTaskBtn)
 
-const  filterBtns = document.querySelectorAll(".filter");
-console.log(filterBtns)
+const  filterBtns = document.querySelectorAll(".filter-btn");
+// console.log(filterBtns)
 
 const taskList = document.getElementById("task-list")
-console.log(taskList)
+// console.log(taskList)
 
 
 
 let tasks = [];
+let currentFilter = "All";
 
 addTaskBtn.addEventListener("click", function() 
 {
@@ -63,7 +64,17 @@ filterBtns.forEach(function(btn) {
 function showTasks(){
     taskList.innerHTML="";
 
-    tasks.forEach((task, index) =>
+    let filteredTasks = tasks;
+
+    if(currentFilter === "Completed") {
+        filteredTasks = tasks.filter(task => task.completed);
+
+    }  else if (currentFilter === "Pending"){
+        filteredTasks = tasks.filter(task => !task.completed);
+
+    }
+
+    filteredTasks.forEach((task, index) =>
         {
         const li = document.createElement('li')
         li.setAttribute("data-index", index);
